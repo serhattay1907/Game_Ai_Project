@@ -1,80 +1,33 @@
-🎮 Connect 4 with AI
+# 🎮 Connect 4 AI — Minimax with Alpha-Beta Pruning
 
-A fun Connect 4 game built with Python and Pygame, featuring a smart AI opponent powered by the Minimax algorithm with Alpha-Beta pruning.
--------------------------------------------------------------------------------------------------------------------------------------------
-📖 Table of Contents
+A Connect 4 game in Python/Pygame with an AI opponent that searches the game tree using **Minimax with Alpha-Beta pruning**.
 
-Overview  – What the game does
+## 🧠 How the AI works
+- **Minimax** explores future moves (default depth **5**), assuming both players play optimally
+- **Alpha-Beta pruning** cuts branches that cannot change the result, making deeper search feasible
+- **Heuristic evaluation** scores board windows of four: rewards own 2/3-in-a-row, blocks the opponent's, and prefers the center column
 
-Installation  – How to set it up
+Change difficulty by editing the search depth in `connect4_with_ai.py`:
+```python
+col, score = minimax(board, 5, -math.inf, math.inf, True)
+```
 
-How to Play
- – Game controls
-
-AI Logic
- – How the AI works
-
-Customization
- – Adjust settings
-
-License
- – Usage rights
--------------------------------------------------------------------------------------------------------------------------------------------
-🕹️ Overview
-
-Play the classic Connect 4 against an intelligent AI.
-Drop colored discs into a grid — the first to connect four in a row wins!
-
--------------------------------------------------------------------------------------------------------------------------------------------
-
-⚙️ Installation
-
-Set up and start the game in a few steps:
-
-git clone https://github.com/yourusername/connect4_with_ai.git
-cd connect4_with_ai
+## ▶️ Run
+```bash
+git clone https://github.com/serhattay1907/Game_Ai_Project.git
+cd Game_Ai_Project
 pip install pygame numpy
 python connect4_with_ai.py
+```
+You play red, the AI plays green. Move the mouse to pick a column, click to drop.
 
+## ⚙️ Settings
+| Setting | Default | Meaning |
+|---|---|---|
+| `ROW_COUNT` | 6 | Board rows |
+| `COLUMN_COUNT` | 7 | Board columns |
+| `SQUARESIZE` | 100 | Cell size (px) |
+| depth | 5 | AI search depth |
 
-💡 Requires Python 3.8+
--------------------------------------------------------------------------------------------------------------------------------------------
-🎮 How to Play
-
-You play as red, the AI is green.
-
-Move your mouse to select a column and click to drop your piece.
-
-The AI will play automatically after your move.
-
-The first to connect four pieces wins!
--------------------------------------------------------------------------------------------------------------------------------------------
-
-🧠 AI Logic
-
-The AI uses Minimax with Alpha-Beta pruning to find the best move.
-It looks ahead a few moves (default depth = 5) and blocks or creates winning opportunities.
-You can adjust its difficulty by changing the depth value in the code:
-
-col, score = minimax(board, 5, -math.inf, math.inf, True) 
--------------------------------------------------------------------------------------------------------------------------------------------
-
-🎨 Customization
-
-You can tweak these values in the code:
-
-Setting	Default	Description
-ROW_COUNT	6	Number of board rows
-COLUMN_COUNT	7	Number of columns
-SQUARESIZE	100	Cell size (pixels)
-depth	5	AI difficulty
-
-Example:
-ROW_COUNT = 8
-COLUMN_COUNT = 8
-SQUARESIZE = 80
-
-
-ROW_COUNT = 8
-COLUMN_COUNT = 8
-SQUARESIZE = 80
+## 📁 Also in this repo
+`flappy.py` / `flappy_update.py` — a Flappy Bird clone written as Pygame practice (not part of the AI project).
