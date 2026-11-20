@@ -2,6 +2,12 @@
 
 A Connect 4 game in Python/Pygame with an AI opponent that searches the game tree using **Minimax with Alpha-Beta pruning**.
 
+<p align="center">
+  <img src="docs/connect4_demo.gif" width="350" alt="Connect 4 game: the minimax AI (yellow) beats a heuristic player (red)">
+</p>
+
+<sub>A full game recorded from `connect4_with_ai.py`: the AI (yellow, depth-5 minimax) against a simple heuristic player (red).</sub>
+
 ## 🧠 How the AI works
 - **Minimax** explores future moves (default depth **5**), assuming both players play optimally
 - **Alpha-Beta pruning** cuts branches that cannot change the result, making deeper search feasible
